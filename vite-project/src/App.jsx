@@ -1,23 +1,18 @@
 import React from "react";
 
 let itemList = [];
-function handleClick(checkbox) {
-  addItem(checkbox);
+function addItems(checkbox) {
   if (checkbox.checked) {
     itemList.push(checkbox.value);
   } else {
     let index = itemList.indexOf(checkbox.value);
+    if (index !== -1) itemList.splice(index, 1);
   }
-  if (index !== -1) {
-    itemList.splice(index, 1);
-  }
-}
-function addItem() {
   const todoList = {
     tasks: itemList,
   };
 
-  fetch("http://localhost:8000", {
+  fetch("http://localhost:8000/List", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
