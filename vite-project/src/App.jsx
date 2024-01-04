@@ -60,6 +60,9 @@ function App() {
               value="task2"
               id="task2"
               onClick={() => handleClick(this)}
+              onclick={() => {
+                addItems(this);
+              }}
             />
             <label class="TDbox" htmlFor="task2">
               Task 2
@@ -73,6 +76,9 @@ function App() {
               value="task3"
               id="task3"
               onClick={() => handleClick(this)}
+              onclick={() => {
+                addItems(this);
+              }}
             />
             <label class="TDbox" htmlFor="task3">
               Task 3
@@ -86,6 +92,9 @@ function App() {
               value="task4"
               id="task4"
               onClick={() => handleClick(this)}
+              onclick={() => {
+                addItems(this);
+              }}
             />
             <label class="TDbox" htmlFor="task4">
               Task 4
@@ -99,10 +108,10 @@ function App() {
               value="task5 "
               id="task5"
               onClick={() => handleClick(this)}
+              onclick={() => {
+                addItems(this);
+              }}
             />
-            <label class="TDbox" htmlFor="task5">
-              Task 5
-            </label>
           </div>
         </>
       </div>
