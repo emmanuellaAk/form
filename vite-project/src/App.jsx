@@ -2,30 +2,34 @@ import React from "react";
 
 let itemList = [];
 
-function addItem(item) {
-  if (!itemList.includes(item)) {
-    itemList.push(item);
-    console.log(`${item} added successfully.`);
-  } else {
-    console.log(`${item} is already in the list.`);
-  }
-}
-addItem();
-function App() {
-  <button id="addButton">Add Task</button>;
+function addItem() {
+  const todoList = {
+    tasks: itemList,
+  };
 
-  fetch("localhost:8000", {
+  fetch("http://localhost:8000", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(Todo - List),
+    body: JSON.stringify(todoList),
   })
     .then((response) => response.json())
     .then((data) => console.log(data))
     .catch((error) => {
       console.error("Error:", error);
     });
+}
+
+itemList.push({ task: "Bath", id: 1 });
+itemList.push({ task: "Dress", id: 2 });
+
+addItem();
+
+function App() {
+  <button id="addButton" onClick={addItem}>
+    Add Task
+  </button>;
 
   return (
     <>
